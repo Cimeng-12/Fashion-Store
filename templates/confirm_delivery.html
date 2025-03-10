@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2>Konfirmasi Penerimaan Barang</h2>
+        <p>Silakan klik tombol di bawah ini jika Anda telah menerima pesanan Anda.</p>
+        <form action="{{ url_for('confirm_delivery', order_id=order.id) }}" method="POST">
+            <button type="submit">Konfirmasi Barang Diterima</button>
+        </form>
+    </div>
+{% endblock %}

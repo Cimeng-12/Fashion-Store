@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ product['name'] }}</h1>
+<img src="{{ product['image_url'] }}" alt="{{ product['name'] }}" width="300">
+<p>{{ product['description'] }}</p>
+<p>Rp{{ "{:,.0f}".format(product['price']) }}</p>
+
+<!-- Tombol Tambah ke Keranjang -->
+<a href="{{ url_for('add_to_cart', product_id=product['id']) }}" class="btn btn-success">
+    Tambah ke Keranjang
+</a>
+
+<a href="{{ url_for('cart') }}" class="btn btn-primary">
+    Lihat Keranjang
+</a>
+
+<a href="{{ url_for('catalog') }}" class="btn btn-secondary">
+    Kembali ke Katalog
+</a>
+{% if session.get('user_id') == product['user_id'] or session.get('is_admin') %}
+<form action="{{ url_for('delete_product', product_id=product['id']) }}" method="POST" style="display:inline;">
+    <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?');">
+        Hapus Produk
+    </button>
+</form>
+{% endif %}
+{% endblock %}

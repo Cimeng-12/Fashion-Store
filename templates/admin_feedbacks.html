@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Daftar Kritik & Saran</h2>
+
+    <table border="1">
+        <tr>
+            <th>Nama</th>
+            <th>Pesan</th>
+            <th>Waktu</th>
+        </tr>
+        {% for feedback in feedbacks %}
+        <tr>
+            <td>{{ feedback[0] }}</td>
+            <td>{{ feedback[1] }}</td>
+            <td>{{ feedback[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

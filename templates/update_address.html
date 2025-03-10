@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Ubah Alamat Pesanan{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">Ubah Alamat Pengiriman</h2>
+    <div class="card mt-4">
+        <div class="card-body">
+            <form method="POST">
+                <div class="mb-3">
+                    <label for="new_address" class="form-label">Alamat Baru</label>
+                    <input type="text" class="form-control" id="new_address" name="new_address" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

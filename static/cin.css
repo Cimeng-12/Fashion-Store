@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Hapus kemungkinan scroll horizontal */
+}
+
+/* Fix gambar biar full */
+.cimeng {
+    position: relative;
+    width: 100vw; /* Pakai vw biar full di layar */
+    height: 80vh;
+    background: url('/static/images/oke.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+/* Konten di atas overlay */
+.container {
+    z-index: 2;
+    color: white;
+    position: relative;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+}
+

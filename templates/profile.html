@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Profil Pengguna</h1>
+    <p>Selamat datang, <strong>{{ session['username'] }}</strong>!</p>
+
+    <p>Email Anda: {{ session.get('email', 'Email tidak tersedia') }}</p>
+
+
+    {% if session['is_admin'] %}
+        <p>Status: <strong>Admin</strong></p>
+    {% else %}
+        <p>Status: <strong>Pengguna Biasa</strong></p>
+    {% endif %}
+
+    <hr>
+
+    <h1>About Us</h1>
+    <p>Selamat datang di Fashion Store! Kami adalah platform belanja online yang menyediakan berbagai koleksi fashion berkualitas tinggi. Kami berkomitmen untuk memberikan pengalaman berbelanja yang menyenangkan dan produk-produk terbaik untuk Anda.</p>
+    <h3>Hubungi Kami</h3>
+    <p>Jika Anda memiliki pertanyaan atau saran, jangan ragu untuk menghubungi kami melalui email: <strong>ctik49683@gmail.com</strong></p>
+</div>
+{% endblock %}

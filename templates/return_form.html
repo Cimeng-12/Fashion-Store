@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Form Pengajuan Pengembalian Barang</h1>
+
+<form method="POST" action="{{ url_for('return_product') }}" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="name">Nama Lengkap</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+        <label for="order_id">ID Pesanan</label>
+        <input type="text" class="form-control" id="order_id" name="order_id" required>
+    </div>
+
+    <div class="form-group">
+        <label for="product_name">Nama Barang</label>
+        <input type="text" class="form-control" id="product_name" name="product_name" required>
+    </div>
+
+    <div class="form-group">
+        <label for="reason">Alasan Pengembalian</label>
+        <select class="form-control" id="reason" name="reason" required>
+            <option value="Barang rusak">Barang rusak</option>
+            <option value="Barang tidak sesuai dengan deskripsi">Barang tidak sesuai dengan deskripsi</option>
+            <option value="Ukuran atau warna salah">Ukuran atau warna salah</option>
+            <option value="Lainnya">Lainnya</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="details">Detail Pengembalian</label>
+        <textarea class="form-control" id="details" name="details" rows="3" required></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="return_image">Upload Bukti Foto</label>
+        <input type="file" class="form-control" id="return_image" name="return_image" accept="image/*">
+    </div>
+
+    <button type="submit" class="btn btn-warning">Ajukan Pengembalian</button>
+</form>
+{% endblock %}
